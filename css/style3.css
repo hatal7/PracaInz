@@ -1,0 +1,443 @@
+@-webkit-keyframes bounce-top {
+    0% {
+      -webkit-transform: translateY(-45px);
+      transform: translateY(-45px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+      opacity: 1;
+    }
+    24% {
+      opacity: 1;
+    }
+    40% {
+      -webkit-transform: translateY(-24px);
+      transform: translateY(-24px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+    65% {
+      -webkit-transform: translateY(-12px);
+      transform: translateY(-12px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+    25%,
+    55%,
+    75%,
+    87% {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
+    100% {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes bounce-top {
+    0% {
+      -webkit-transform: translateY(-45px);
+      transform: translateY(-45px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+      opacity: 1;
+    }
+    24% {
+      opacity: 1;
+    }
+    40% {
+      -webkit-transform: translateY(-24px);
+      transform: translateY(-24px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+    65% {
+      -webkit-transform: translateY(-12px);
+      transform: translateY(-12px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+    25%,
+    55%,
+    75%,
+    87% {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
+    100% {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+      opacity: 1;
+    }
+  }
+  
+  *,
+  *::before,
+  *::after {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-padding-top: 72px;
+  }
+  
+  body {
+    position: relative;
+    background-color:rgb(249, 249, 249);
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .card-img-top {
+    height: 300px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    cursor: pointer;
+  }
+  
+  .card-body .card-title {
+    font-size: 25px;
+    text-align: center;
+  }
+  
+  .card-text {
+    text-align: center;
+  }
+  
+  .underline {
+    margin: 0 auto 40px;
+    width: 90px;
+    height: 4px;
+    background-color: #b6283f;
+  }
+  
+  .blue-text {
+    color: #b6283f;
+  }
+  
+  .shadow-bg {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  nav {
+    text-transform: uppercase;
+    z-index: 1;
+    background-color: rgb(36, 36, 36);
+  }
+  
+  nav .nav-link, nav .navbar-brand, nav .fa-bars {
+    color: #fff;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+  }
+  #konto{
+    background-color:rgb(70, 70, 70);
+    border-radius: 40px;
+  }
+  
+  nav .fa-bars {
+    padding: 10px;
+  }
+  
+  nav .navbar-brand {
+    font-weight: bold;
+  }
+  
+  nav .nav-link:hover, nav .navbar-brand:hover {
+    color: #b6283f;
+  }
+  
+  nav .active {
+    color: #b6283f;
+  }
+
+  /* //////////////////////////////////////// */
+
+
+
+
+.product img {
+    max-width: 100%;
+    object-fit: contain;
+    height: 100%;
+  }
+  .product {
+    display: flex;
+    border-radius: 40px;
+    padding: 40px;
+    background-color: rgb(219, 219, 219);
+    margin-bottom: 40px;
+  }
+  
+  .product-left,
+  .product-right{
+    max-width: 50%;
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    align-content: stretch;
+    flex-direction: column;
+  }
+  
+/* .product-down{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    padding: 40px;
+    background-color: #b2aeb36e;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+} */
+
+  .product-container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .product-description {
+    color: #242424;
+    text-align: left;
+    padding: 30px 60px 30px 60px;
+    font-size: 22px;
+  }
+
+  .product-description span {
+    font-weight: bold;
+  }
+  
+  
+/* //////////////////////////////////////// */
+
+  .product-button{
+    background-color:#2ca85c;
+    text-align: center;
+    padding: 10px 30px 10px 30px;
+    margin: 15px;
+    font-size: 22px;
+    border: none;
+    border-radius: 20px;
+    align-items: center;
+  
+  }
+  
+  .product-button a{
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .product-button a:hover{
+      color: #fff;
+  }
+  
+  .product-button:hover{
+    background-color: #808080;
+    color: #fff;
+  }
+
+
+   /* //////////////////////////////////////// */
+  
+  table{
+    position:relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%; 
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 2px 15px rgba(64,64,64,.7);
+    border-radius: 12px 12px 12px 12px;
+    overflow: hidden;
+   }
+   
+   td , th{
+    padding: 15px 20px;
+    text-align: center;
+    
+   
+   }
+   th{
+    background-color: #242424;
+    color: #fafafa;
+    font-weight: 200;
+    text-transform: uppercase;
+   
+   }
+   tr{
+    width: 100%;
+    background-color: #fafafa;
+   }
+   tr:nth-child(even){
+    background-color: #eeeeee;
+   }
+  
+  
+  /* //////////////////////////////////////// */
+
+
+
+  .contact {
+  position: relative;
+  background-position: bottom;
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: 0;
+}
+
+.contact h2 {
+  color: #fff;
+  font-weight: bold;
+}
+
+.contact .underline {
+  background-color: #fff;
+}
+
+.contact .contact-shadow {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 9, 27, 0.75);
+  z-index: -5;
+}
+
+.contact .contact-us {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+.contact .contact-us .contact-item {
+  margin: 30px 0;
+}
+
+.contact .contact-us .contact-item h3 {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.contact .contact-us .contact-item .social-media {
+  font-size: 26px;
+}
+
+.contact .contact-us .contact-item .social-media .fa-facebook-f:before, .contact .contact-us .contact-item .social-media .fa-instagram:before, .contact .contact-us .contact-item .social-media .fa-twitter:before {
+  padding: 10px;
+  color: #fff;
+}
+
+@media (min-width: 280px) {
+  header .fa-chevron-down {
+    left: 42%;
+    -webkit-transform: translateX(-42%);
+            transform: translateX(-42%);
+  }
+  header .hero-img {
+    background-image: url("../images/toyota.jpg");
+  }
+
+}
+
+@media (min-width: 360px) {
+  .fa-chevron-down {
+    left: 44%;
+    -webkit-transform: translateX(-44%);
+            transform: translateX(-44%);
+  }
+
+}
+
+@media (min-width: 375px) {
+  header h1 {
+    font-size: 36px;
+  }
+  header p {
+    font-size: 16px;
+  }
+  header .fa-chevron-down {
+    left: 44%;
+    -webkit-transform: translateX(-44%);
+            transform: translateX(-44%);
+  }
+
+}
+
+@media (min-width: 540px) {
+  header .fa-chevron-down {
+    left: 46%;
+    -webkit-transform: translateX(-46%);
+            transform: translateX(-46%);
+  }
+
+}
+
+@media (min-width: 768px) {
+  header h1 {
+    font-size: 42px;
+  }
+  header p {
+    font-size: 20px;
+  }
+  header .fa-chevron-down {
+    left: 48%;
+    -webkit-transform: translateX(-48%);
+            transform: translateX(-48%);
+  }
+
+}
+
+@media (min-width: 992px) {
+  header .fa-chevron-down {
+    left: 49%;
+    -webkit-transform: translateX(-49%);
+            transform: translateX(-49%);
+  }
+  nav {
+    height: 82px;
+  }
+ 
+  .prices .price-info {
+    font-size: 18px;
+  }
+
+  }
+  .contact {
+    background-image: url("../images/bentley.jpg");
+  }
+
+@media (min-width: 1200px) {
+  header .hero-img {
+    background-image: url("../images/toyota.jpg");
+  }
+}
+/*# sourceMappingURL=main.css.map */
