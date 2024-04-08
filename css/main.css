@@ -458,7 +458,7 @@ header .btn-outline-light {
             transform: translateX(-42%);
   }
   header .hero-img {
-    background-image: url("../images/toyota.jpg");
+    background-image: url("../images/toyota2.jpg");
   }
 
 }
@@ -527,12 +527,12 @@ header .btn-outline-light {
 
   }
   .contact {
-    background-image: url("../images/bentley.jpg");
+    background-image: url("../images/bentley2.jpg");
   }
 
 @media (min-width: 1200px) {
   header .hero-img {
-    background-image: url("../images/toyota.jpg");
+    background-image: url("../images/toyota2.jpg");
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -103,7 +103,7 @@ body{
 
 .login-card-footer{
     margin-top: 1.5rem;
-    font-size: calc(1rem * .8);
+    font-size: calc(1rem * 1);
 }
 
 .login-card input[type="text"],
@@ -139,12 +139,27 @@ body{
     transition: background .5s;
 }
 
+.login-card-form button a{
+    color: white;
+}
+
+.login-card-form button a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+
+
 .login-card-form button:hover{
     background-color: rgba(0, 0, 0, .8);
     cursor: pointer;
 }
 
-.blue-text {
+.text1 {
+    color: #000000;
+  }
+
+.text2 {
     color: #b6283f;
   }
 
@@ -155,5 +170,6 @@ body{
     font-weight: bold;
     text-decoration: none;
     font-size: 50px;
+    margin-bottom: 20px;
   }
   
