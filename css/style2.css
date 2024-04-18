@@ -15,11 +15,22 @@ body{
 
 .login-card{
     width: 450px;
-    background: rgba(219, 219, 219);
+    background: rgba(190, 190, 190, 0.92);
     padding: 4rem;
     border-radius: 44px;
     position: relative;
     opacity: 1;
+}
+
+.form-item{
+    text-decoration: none;
+    font-size: 20px;
+
+}
+
+.login-card-footer a{
+    text-decoration: none;
+    color: #b6283f;
 }
 
 /* .login-card::before{
@@ -35,7 +46,7 @@ body{
     margin-bottom: 2rem;
 }
 
-.login-card-logo img{
+.login-card-logo {
     width: 60px;
 } */
 
@@ -169,7 +180,7 @@ body{
     transition: color 0.3s;
     font-weight: bold;
     text-decoration: none;
-    font-size: 50px;
+    font-size: 60px;
     margin-bottom: 20px;
   }
   

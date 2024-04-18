@@ -8,9 +8,26 @@
     <link rel="stylesheet" href="./css/style2.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
 </head>
 <body>
     
+    <!-- <div class="mb-5">
+        <h3 class="mb-3">Zaloguj się</h3>
+
+        <input type="text" placeholder="Nazwa użytkownika" id="userInp" class="form-control mb-3">
+        <input type="password" placeholder="Hasło" id="passInp" class="form-control mb-3">
+        <div class="custon-control custom-switch mb-3">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+            <label class="custom-control-label" for="customSwitch1">Zapamiętaj mnie</label>
+        </div>
+
+
+        <button type="text" id="sub_btn" class="btn w-100 btn-outline-primary mb-3">Zaloguj się</button>
+        <a href="register.html" class="badge badge-secondary py-1 w-100">Chcesz założyć nowe konto?</a>
+    </div> -->
+
+
     <div class="login-card-container">
         <div class="login-card">
             <div class="login-card-logo">
@@ -18,32 +35,144 @@
             </div>
             <div class="login-card-header">
                 <h1>Zaloguj się</h1>
-                <div></div>
             </div>
-            <form class="login-card-form">
-                <div class="form-item">
-                    <span class="form-item-icon material-symbols-rounded">mail</span>
-                    <input type="text" placeholder="E-mail" required autofocus>
+
+            <div class="login-card-form">
+                <input type="text" placeholder="Nazwa użytkownika" id="userInp" class="form-control mb-3">
+                <input type="password" placeholder="Hasło" id="passInp" class="form-control mb-3">
+                <div class="custon-control custom-switch mb-3">
+                    <p id="customSwitch1"></p>
+                    <label class="custom-control-label" for="customSwitch1"></label>
                 </div>
-                <div class="form-item">
-                    <span class="form-item-icon material-symbols-rounded">lock</span>
-                    <input type="password" placeholder="Hasło" required>
-                </div>
-                <div class="form-item-other">
-                    <div class="checkbox">
-                        <input type="checkbox" id="rememberMeCheckbox">
-                        <label for="remeberMeCheckbox">Zapamiętaj mnie</label>
-                    </div>
-                    <a href="#">Zapomniałem hasła</a>
-                </div>
-                <button type="submit">Zaloguj</button>
+        
+                <button type="text" id="sub_btn" class="btn w-100 btn-outline-primary mb-3">Zaloguj się</button>
                 <button><a href="index.html">Wróć do strony</a></button>
-                <div class="login-card-footer">
-                Nie masz konta? <a href="register.html">Zarejestruj się!</a>
+                <div class="login-card-footer"class=" w-100">
+                    Nie masz konta? <a href="register.html" class="badge badge-secondary py-1 w-100"> Załóż je!</a>
+                </div>
             </div>
-            </form>
         </div>
     </div>
 
+
+
+
 </body>
+<script type="module">
+    // Konfiguracja firebase
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCDMnltaSuO8jGRFpsP3KHwVvqIMr5aTEs",
+      authDomain: "firev9jsdb-61467.firebaseapp.com",
+      databaseURL: "https://firev9jsdb-61467-default-rtdb.firebaseio.com",
+      projectId: "firev9jsdb-61467",
+      storageBucket: "firev9jsdb-61467.appspot.com",
+      messagingSenderId: "627847392123",
+      appId: "1:627847392123:web:f30f3d8313821983b76bde"
+    };
+  
+    const app = initializeApp(firebaseConfig);
+
+    import { getDatabase, ref, set, child, get }
+        from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+
+        const db = getDatabase();
+
+        // Referencje 
+
+        const username = document.getElementById('userInp');
+        const pass = document.getElementById('passInp');
+        const submit = document.getElementById('sub_btn');
+
+        // Proces logowania
+
+    //     function AuthenticateUser() {
+    //     let user = document.getElementById('userT').value;
+    //     let pass = document.getElementById('passT').value;
+
+    //     if (isNullOrWhiteSpaces(user) || isNullOrWhiteSpaces(pass)) {
+    //         alert("cannot leave username/password field empty");
+    //         return;
+    //     }
+
+    //     const dbRef = ref(db);
+
+    //     get(child(dbRef, 'UsersList/' + user)).then((snapshot) => {
+
+    //         if (snapshot.exists()) {
+    //             let dbpass = decPass(snapshot.val().Password, pass);
+
+    //             if (dbpass == pass) {
+    //                 login(snapshot.val());
+    //             }
+    //             else {
+    //                 alert("username or password not valid");
+    //             }
+    //         }
+
+    //         else {
+    //             alert("username or password not valid");
+    //         }
+    //     });
+    // }
+
+    // function isNullOrWhiteSpaces(value) {
+    //     value = value.toString();
+    //     return (value == null || value.replaceAll(' ', '').length < 1);
+    // }
+
+
+
+
+        function AuthenticateUser(){
+            const dbRef = ref(db);
+            
+            get(child(dbRef, "UsersList/"+ username.value)).then((snapshot)=>{
+                if(snapshot.exists()){
+                    let dbpass = decPass(snapshot.val().password);
+                    if(dbpass == pass.value){
+                        login(snapshot.val());
+                    }
+
+                    else{
+                        alert("Użytkownik nie istnieje");
+                    }
+                }
+
+                else{
+                    alert("Nazwa użytkownika lub hasło jest nieprawidłowe");
+                };
+            });
+        }
+
+        function decPass(dbpass){
+            var pass12 = CryptoJS.AES.decrypt(dbpass, pass.value);
+            return pass12.toString(CryptoJS.enc.Utf8);
+        }
+
+
+        function login(user){
+            let keepLoggedIn = document.getElementById('customSwitch1').checked;
+
+            if(!keepLoggedIn){
+                sessionStorage.setItem('user', JSON.stringify(user));
+                window.location="index.html";
+            }
+
+            else{
+                localStorage.setItem('keepLoggedIn', 'yes');
+                localStorage.setItem('user', JSON.stringify(user));
+                window.location('index.html')
+            }
+        }
+
+
+        // Przypisywanie wydarzeń
+        
+        submit.addEventListener('click', AuthenticateUser);
+
+
+
+  </script>
 </html>
