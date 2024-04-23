@@ -145,6 +145,10 @@ h2 {
   background-color: #b6283f;
 }
 
+.red-text {
+  color: #b6283f;
+}
+
 .blue-text {
   color: #b6283f;
 }
@@ -165,14 +169,6 @@ nav .nav-link, nav .navbar-brand, nav .fa-bars {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-#konto{
-  background-color:rgb(70, 70, 70);
-  border-radius: 40px;
-}
-
-nav .fa-bars {
-  padding: 10px;
-}
 
 nav .navbar-brand {
   font-weight: bold;
@@ -184,6 +180,15 @@ nav .nav-link:hover, nav .navbar-brand:hover {
 
 nav .active {
   color: #b6283f;
+}
+
+#konto{
+  background-color:rgb(70, 70, 70);
+  border-radius: 40px;
+}
+
+nav .fa-bars {
+  padding: 10px;
 }
 
 header {

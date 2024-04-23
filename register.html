@@ -125,7 +125,7 @@
 
 
             if(!nameregex.test(name.value)){
-                alert("Nazwa powinna zawierać tylko litery");
+                alert("Imię nie może zawierać cyfr!");
                 return false;
             }
 
@@ -134,10 +134,10 @@
                 return false;
             }
 
-            if(!userregex.test(username.value)){
-                alert("Nazwa użytkownika musi mieć min.5 znaków");
-                return false;
-            }
+            // if(!userregex.test(username.value)){
+            //     alert("Nazwa użytkownika musi mieć min.5 znaków");
+            //     return false;
+            // }
 
             // if(!passregex.test(pass.value)){
             //     alert("Wpisz hasło");
